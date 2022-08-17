@@ -1,7 +1,7 @@
 <?php
 require_once ("../config/connect.php");
 
-// $sth = $connect->prepare("SELECT * FROM pai_nft");
+// $sth = $connect->prepare("SELECT * FROM pai_balance");
 // $sth->execute();
 // $result = $sth->fetchAll();
 // /* PDOStatement::FETCH_ASSOC */
@@ -11,17 +11,17 @@ require_once ("../config/connect.php");
 // }
 
 // Consultar a la base de datos
-$sql = "SELECT * FROM pai_nft";
+$sql = "SELECT * FROM pai_balance";
 // Procesar la consulta
 $results = $connect->query($sql);
 // Buscar array
-$nft = $results->fetch_all(MYSQLI_ASSOC);
+$balance = $results->fetch_all(MYSQLI_ASSOC);
 // Liberar resultados
 $results->free_result();
 
 
 
-echo json_encode($nft);
+echo json_encode($balance);
 
 
 
