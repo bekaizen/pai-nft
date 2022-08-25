@@ -84,13 +84,13 @@
                 <b>DOP</b> x <b>USD</b>
             </div>
             <div style="display:grid; grid-template-columns: 1fr 1fr;">
-                <div id="minimo" style="border:1px solid #ddd; border-radius: 6px; padding:6px 12px; box-sizing: border-box;">
+                <div style="border:1px solid #ddd; border-radius: 6px; padding:6px 12px; box-sizing: border-box;">
                     <label style="font-size:10px; font-weight:bold">MINIMO</label>
-                    <input style="border:none !important; outline:none !important; height:44px; padding:0; margin:0; background-color:transparent !important" class="w3-input w3-border" type="text" id="minimo-venta" disabled="disabled">
+                    <input style="border:none !important; outline:none !important; height:44px; padding:0; margin:0;" class="w3-input w3-border" type="text" id="minimo-venta" editable="false">
                 </div>
-                <div id="maximo" style="border:1px solid #ddd; border-radius: 6px; padding:6px 12px; box-sizing: border-box;">
+                <div style="border:1px solid #ddd; border-radius: 6px; padding:6px 12px; box-sizing: border-box;">
                     <label style="font-size:10px; font-weight:bold">MAXIMO</label>
-                    <input style="border:none !important; outline:none !important; height:44px; padding:0; margin:0; background-color:transparent !important" class="w3-input w3-border" type="text" id="maximo-venta" disabled="disabled">
+                    <input style="border:none !important; outline:none !important; height:44px; padding:0; margin:0;" class="w3-input w3-border" type="text" id="maximo-venta" editable="false">
                 </div>
             </div>
             <div style="margin-top:16px;">
@@ -103,8 +103,17 @@
 
         <button id="actualizarBalances">COMPRAR USDT</button>
 
-        <div id="display-status"></div>
-
+        <div class="w3-modal" id="pool">
+            <div class="w3-display-middle w3-white w3-round w3-round-xlarge w3-animate-fade w3-card-2 w3-col l10 m10 s10">
+                <div class="w3-padding-16  reajuste w3-container" align="">
+                    <center>
+                        <b>POOL CERRADO</b>
+                    </center>
+                    <br>
+                    <p>Actualmente el pool de compras se encuentra cerrado. verifica mas tarde!</p>
+                </div>
+            </div>
+        </div>
     </div>
     
 
@@ -113,5 +122,12 @@
     <script src="js/balanceVenta.js"></script>
     <script src="js/balanceUsuario.js"></script>
     <script src="js/actualizarBalanceVenta.js"></script>
+    <script>
+        $("#minimo-venta").click(function() {
+            var minimo = $("#minimo-venta").val();
+            document.getElementById("orden-compra").value = minimo;
+            alert("working");
+        })
+    </script>
 </body>
 </html>
