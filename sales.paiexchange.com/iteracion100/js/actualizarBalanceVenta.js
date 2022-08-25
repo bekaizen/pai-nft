@@ -127,7 +127,7 @@ $("#actualizarBalances").click(function() {
                     document.getElementById('display-status').innerHTML = poolMinimo;
                     document.getElementById('pool').style.display = "block";
     
-                } else if ( Number(orden) > Number(maxVenta) ) {
+                } else if ( Number(orden) > Number(valBalance) ) {
                 
                     var poolMaximo = `
                         <div class="w3-modal" id="pool">
